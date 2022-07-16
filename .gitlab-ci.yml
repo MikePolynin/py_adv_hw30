@@ -13,6 +13,10 @@ stages:
 before_script:
     - pip install sqlalchemy[mypy]
     - pip install -r requirements.txt
+    - git clone https://github.com/python/mypy.git
+    - cd mypy
+    - pip install --upgrade .
+    - cd ../
 
 
 unittest:
