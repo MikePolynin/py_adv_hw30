@@ -1,8 +1,8 @@
 from fastapi.testclient import TestClient
 
-from main import app
-from database import session
-import models
+from ..src.main import app
+from ..src.database import session
+from ..src import models
 
 client = TestClient(app)
 
