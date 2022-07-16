@@ -24,7 +24,7 @@ def test_getting_all_recipes_sorted_by_popularity():
                 view_count=2,
             ),
             models.Recipe(
-                title="d  ish_2",
+                title="dish_2",
                 cooking_time="50",
                 ingredients="d, e, f",
                 description="text_2",

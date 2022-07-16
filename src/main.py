@@ -32,7 +32,6 @@ async def all_recipes() -> List[models.Recipe]:
 
 
 @app.get("/{recipe_id}", response_model=schemas.RecipeDetail)
-# asd = Path(title="Recipe id", ge=1)
 async def recipe_detail(
     recipe_id: int = Path(title="Recipe id", ge=1)
 ) -> models.Recipe:
