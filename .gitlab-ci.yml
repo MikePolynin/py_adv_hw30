@@ -16,7 +16,7 @@ before_script:
 unittest:
   stage: test
   script:
-    - pytest tests
+    - pytest test
 
 mypy:
   stage: test
