@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String, Text
 
-from ..src.database import Base
+from ..src.database import declarative_base
+
+Base = declarative_base()
 
 
 class Recipe(Base):
