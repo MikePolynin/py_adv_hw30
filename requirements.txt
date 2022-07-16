@@ -13,5 +13,3 @@ aiosqlite==0.17.0
 greenlet==1.1.2
 requests==2.28.1
 types-SQLAlchemy==1.4.45
-# sqlalchemy[mypy]
-sqlalchemy2-stubs==0.0.2a24

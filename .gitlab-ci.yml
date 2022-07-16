@@ -11,6 +11,7 @@ stages:
 
 
 before_script:
+    - pip install sqlalchemy[mypy]
     - pip install -r requirements.txt
 
 unittest:
