@@ -15,7 +15,7 @@ before_script:
     - pip install -r requirements.txt
     - git clone https://github.com/python/mypy.git
     - cd mypy
-    - sudo python3 -m pip install --upgrade .
+    - pip install --upgrade .
 
 unittest:
   stage: test
