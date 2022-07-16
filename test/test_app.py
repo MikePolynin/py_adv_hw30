@@ -1,8 +1,8 @@
 from fastapi.testclient import TestClient
 
-from src.main import app
-from src.database import session
-from src import models
+from main import app
+from database import session
+import models
 
 client = TestClient(app)
 
@@ -18,7 +18,7 @@ def test_getting_all_recipes_sorted_by_popularity():
         models.Recipe(title="dish_1", cooking_time="25.5",
                       ingredients="a, b, c", description="text_1",
                       view_count=2),
-        models.Recipe(title="dish_2", cooking_time="50",
+        models.Recipe(title="d  ish_2", cooking_time="50",
                       ingredients="d, e, f", description="text_2",
                       view_count=5),
         models.Recipe(title="dish_3", cooking_time="25",
