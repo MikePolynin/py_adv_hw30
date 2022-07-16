@@ -23,7 +23,7 @@ unittest:
 mypy:
   stage: test
   script:
-    - mypy src/
+    - mypy --show-traceback src/
 
 black:
   stage: test
