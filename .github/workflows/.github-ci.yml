@@ -1,0 +1,42 @@
+name: ci_workflows
+
+on: [ push, pull_request ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.7" ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          git clone https://github.com/python/mypy.git
+          cd mypy
+          pip install --upgrade .
+          cd ../
+          pip install sqlalchemy[mypy]
+      - name: unittest
+        run: |
+          pytest test
+      - name: mypy
+        run: |
+          mypy src/
+      - name: black
+        run: |
+          black --diff --check src/
+      - name: isort
+        run: |
+          isort --check-only src/
+      - name: flask8
+        run: |
+          flake8 src/
